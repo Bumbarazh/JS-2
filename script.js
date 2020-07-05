@@ -199,10 +199,10 @@ console.log(word);
 let arrayEight = [ 'a', 'b', 'c'];
 let word2 = '';
 
-let i = 0;
-while (i < arrayEight.length) {
-    word2 += arrayEight[i]
-    i++;
+let itr = 0;
+while (itr < arrayEight.length) {
+    word2 += arrayEight[itr]
+    itr++;
 }
 console.log(word2);
 
@@ -266,8 +266,8 @@ console.log(arrSixteen.slice(3));
 
 // 31 (За допомогою методу/функції slice перетворіть масив в [1,2])
 
-let arrSixteen = [1, 2, 3, 4, 5];
-console.log(arrSixteen.slice(0, 2));
+let arrSixteen2 = [1, 2, 3, 4, 5];
+console.log(arrSixteen2.slice(0, 2));
 
 // 32 (За допомогою методу/функції splice перетворіть масив в [1, 4, 5])
 
