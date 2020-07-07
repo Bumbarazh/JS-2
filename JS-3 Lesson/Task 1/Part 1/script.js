@@ -198,6 +198,3 @@ console.log(fcRules);
 for (let i = 0; i < fcRules.length; i++) {
     fcRules[i].style.color = 'red';
 }
-
-// class 
-
