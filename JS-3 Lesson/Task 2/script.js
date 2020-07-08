@@ -285,3 +285,161 @@ for (let i = 0; i < arrOfCarsTwo.length; i++) {
 }
 
 // Создать массив пользователей. У каждого пользователя обязательно должено быть поле skills которое является массивом. Проитерировать массив пользователей и в каждом пользователе проитерировать его массив skills
+
+const usersOne = [
+    {name: 'Oleg', age: 25, sex: 'male', skills: ['Js', 'Java', 'Python']},
+    {name: 'Matia', age: 24, sex: 'female', skills: ['Html', 'Java', 'Js']},
+    {name: 'Oleksij', age: 32, sex: 'male', skills: ['MySql', 'Ruby', 'PHP']},
+    {name: 'Karina', age: 18, sex: 'female', skills: ['Java', 'MongoDB', 'Js']},
+    {name: 'Volodymyr', age: 29, sex: 'male', skills: ['Css', 'Html', 'Java']},
+    {name: 'Olha', age: 31, sex: 'female', skills: ['Ruby', 'MySql', 'Css']},
+    {name: 'Oleg', age: 25, sex: 'male', skills: ['MongoDB', 'PHP', 'Html']}
+];
+
+for (let i = 0; i < usersOne.length; i++) {
+    for (let j = 0; j < usersOne[i].skills.length; j++) {
+        console.log(usersOne[i].skills[j]);
+    }
+}
+
+// Создать массив пользователей. У каждого пользователя обязательно должено быть поле skills которое является массивом. Проитерировать массив пользователей и в каждом пользователе проитерировать его массив skills. Скопировать все skills всех пользователей в отедльный массив
+
+const usersTwo = [
+    {name: 'Oleg', age: 25, sex: 'male', skills: ['Js', 'Java', 'Python']},
+    {name: 'Matia', age: 24, sex: 'female', skills: ['Html', 'Java', 'Js']},
+    {name: 'Oleksij', age: 32, sex: 'male', skills: ['MySql', 'Ruby', 'PHP']},
+    {name: 'Karina', age: 18, sex: 'female', skills: ['Java', 'MongoDB', 'Js']},
+    {name: 'Volodymyr', age: 29, sex: 'male', skills: ['Css', 'Html', 'Java']},
+    {name: 'Olha', age: 31, sex: 'female', skills: ['Ruby', 'MySql', 'Css']},
+    {name: 'Oleg', age: 25, sex: 'male', skills: ['MongoDB', 'PHP', 'Html']}
+];
+
+const emptyArray = [];
+
+for (let i = 0; i < usersTwo.length; i++) {
+    for (let j = 0; j < usersTwo[i].skills.length; j++) {
+        emptyArray.push(usersTwo[i].skills[j]);
+    }
+}
+
+console.log(emptyArray);
+
+// За допомогою 2х циклів циклів проітеррувати  даний масив і масив кожного об'єкта.
+
+let users = [
+    {name: 'vasya', age: 31, status: false, skills: ['java', 'js']},
+    {name: 'petya', age: 30, status: true, skills: ['java', 'js', 'html']},
+    {name: 'kolya', age: 29, status: true, skills: ['mysql', ',mongo']},
+    {name: 'olya', age: 28, status: false, skills: ['java', 'js']},
+    {name: 'max', age: 30, status: true, skills: ['mysql', ',mongo']}
+];
+
+for (let i = 0; i < users.length; i++) {
+    for (let j = 0; j < users[i].skills.length; j++) {
+        console.log(users[i].skills[j]);
+    }
+}
+
+// З масиву usersThree за допомогою циклу витягнути адреси користувачів і записати (скопіювати) їх в інший порожній масив
+
+let usersThree = [{
+    name: 'vasya',
+    age: 31,
+    status: false,
+    address: {city: 'Lviv', country: 'Ukraine', street: 'Shevchenko', houseNumber: 1}
+}, 
+{
+    name: 'petya',
+    age: 30,
+    status: true,
+    address: {city: 'New York', country: 'USA', street: 'East str', houseNumber: 21}
+}, 
+{
+    name: 'kolya',
+    age: 29,
+    status: true,
+    address: {city: 'Budapest', country: 'Hungary', street: 'Kuraku', houseNumber: 78}
+}, 
+{
+    name: 'olya',
+    age: 28,
+    status: false,
+    address: {city: 'Prague', country: 'Czech', street: 'Paster', houseNumber: 56}
+}, 
+{
+    name: 'max',
+    age: 30,
+    status: true,
+    address: {city: 'Istanbul', country: 'Turkey', street: 'Mikar', houseNumber: 39}
+}, 
+{
+    name: 'anya',
+    age: 31,
+    status: false,
+    address: {city: 'Rio', country: 'Brasil', street: 'Ronaldi', houseNumber: 5}
+}, 
+{
+    name: 'oleg',
+    age: 28,
+    status: false,
+    address: {city: 'Montreal', country: 'Canada', street: 'Acusto', houseNumber: 90}
+},
+{
+    name: 'andrey',
+    age: 29,
+    status: true,
+    address: {city: 'Quebeck', country: 'Canada', street: 'Binaro', houseNumber: 33}
+},
+{
+    name: 'masha',
+    age: 30,
+    status: true,
+    address: {city: 'Moscow', country: 'Russia', street: 'Gogolia', houseNumber: 1}
+}, 
+{
+    name: 'olya',
+    age: 31,
+    status: false,
+    address: {city: 'Portland', country: 'USA', street: 'Forest str', houseNumber: 4}
+}, 
+{
+    name: 'max',
+    age: 31,
+    status: true,
+    address: {city: 'Cairo', country: 'Egypt', street: 'Seashore', houseNumber: 45}
+}];
+
+let emptyArrayTwo = [];
+
+for (let i = 0; i < usersThree.length; i++) {
+        emptyArrayTwo.push(usersThree[i].address);
+}
+
+console.log(emptyArrayTwo);
+
+// За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement. Всі данні в одному блоці.
+
+for (let i = 0; i < usersThree.length; i++) {
+    let usersName = document.createElement('div');
+    usersName.style.color = 'red';
+    usersName.style.fontWeight = 'bold';
+
+    usersName.innerHTML = `Hello my name is ${usersThree[i].name}. I am ${usersThree[i].age} years old. My status is ${usersThree[i].status}. And I live in ${usersThree[i].address.city}`;
+    document.body.appendChild(usersName);
+}
+
+// За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
+
+for (let i =  0; i < usersThree.length; i++) {
+    let createDiv = document.createElement('div');
+    // createDiv.inner = usersThree[i];
+    document.body.appendChild(createDiv);
+
+    for (let key in usersThree[i]) {
+        let createDivTwo = document.createElement('div');
+        createDivTwo.innerHTML = usersThree[i][key];
+        document.body.appendChild(createDivTwo);
+    }
+    
+}
+
