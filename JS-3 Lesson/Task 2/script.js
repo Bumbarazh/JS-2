@@ -431,15 +431,217 @@ for (let i = 0; i < usersThree.length; i++) {
 // За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам (div>div*4)
 
 for (let i =  0; i < usersThree.length; i++) {
-    let createDiv = document.createElement('div');
-    // createDiv.inner = usersThree[i];
-    document.body.appendChild(createDiv);
-
-    for (let key in usersThree[i]) {
-        let createDivTwo = document.createElement('div');
-        createDivTwo.innerHTML = usersThree[i][key];
-        document.body.appendChild(createDivTwo);
-    }
+    let createDiv = document.createElement('div');  
     
+    for (let key in usersThree[i]) {
+        
+        let createDivTwo = document.createElement('div');
+        createDivTwo.innerHTML = JSON.stringify(usersThree[i][key]);
+        createDiv.appendChild(createDivTwo);
+
+    }
+
+    document.body.appendChild(createDiv);
 }
 
+// За допомоги циклу проітерувати  масив users, записати кожного юзера в сівй блок за допомоги document.createElement, розділивши всі властивості по своїм блокам , блок з адресою зробити окремим блоком, з блоками для кожної властивості
+// 
+
+for (let i =  0; i < usersThree.length; i++) {
+    let createDiv = document.createElement('div');  
+    
+    for (let key in usersThree[i]) {
+        
+        let createDivTwo = document.createElement('div');
+        createDivTwo.innerHTML = JSON.stringify(usersThree[i][key]);
+        createDiv.appendChild(createDivTwo);
+
+    }
+    for (let key in usersThree[i].address) {
+        let createDivThree = document.createElement('div');
+        createDivThree.innerHTML = usersThree[i].address[key];
+        createDiv.appendChild(createDivThree); 
+    }
+
+
+
+    document.body.appendChild(createDiv);
+}
+
+// Дано 2 масиви з рівною кількістю об'єктів.
+// З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id". Записати цей об'єкт в новий масив
+
+let usersWithId = [
+{id: 1, name: 'vasya', age: 31, status: false},
+{id: 2, name: 'petya', age: 30, status: true},
+{id: 3, name: 'kolya', age: 29, status: true},
+{id: 4, name: 'olya', age: 28, status: false},
+];
+
+let citiesWithId = [
+{user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+{user_id: 2, country: 'Poland', city: 'Krakow'},
+{user_id: 3, country: 'USA', city: 'Portland'},
+{user_id: 4, country: 'USA', city: 'Miami'},
+];
+
+let anotherArr = [];
+
+for (let i = 0; i < usersWithId.length; i++) {
+
+    for (let j = 0; j < citiesWithId.length; j++) {
+        if (usersWithId[i].id === citiesWithId[j].user_id) {
+            usersWithId[i].address = citiesWithId[j]
+        }
+    }
+    anotherArr[i] = usersWithId[i];
+}
+console.log(anotherArr);
+
+// створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id , class та тегу
+
+let spanChangeByTag = document.getElementsByTagName('span');
+let spanChangeById = document.getElementById('divchyk');
+let spanChangeByClass = document.getElementsByClassName('classik');
+
+// змінити цей текст використовуючи селектори id, class,  tag
+
+spanChangeByClass[0].innerText = 'Hi World!';
+spanChangeById.innerText = 'Hi World 2';
+spanChangeByTag[0].innerText = 'Hi World 3';
+
+// змінити висоту та ширину блоку використовуючи селектори id, class,  tag
+
+spanChangeByTag[0].style.height = '200px';
+spanChangeByTag[0].style.width = '200px';
+
+spanChangeById.style.height = '300px';
+spanChangeById.style.width = '300px';
+
+spanChangeByClass[0].style.height = '400px';
+spanChangeByClass[0].style.width = '400px';
+
+// за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
+
+let tableCreate = document.createElement('table');
+let rowCreate = document.createElement('tr');
+let columnCreate = document.createElement('td');
+let columnCreateOne = document.createElement('td');
+let columnCreateTwo = document.createElement('td');
+
+columnCreate.innerText = 'Hello';
+columnCreateOne.innerText = 'World';
+columnCreateTwo.innerText = 'I am here';
+
+document.body.appendChild(tableCreate);
+document.getElementsByTagName('table')[0].appendChild(rowCreate);
+document.getElementsByTagName('tr')[0].appendChild(columnCreate);
+document.getElementsByTagName('tr')[0].appendChild(columnCreateOne);
+document.getElementsByTagName('tr')[0].appendChild(columnCreateTwo);
+document.createElement('br');
+
+// за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
+
+let tableTwoCreate = document.createElement('table');
+document.body.appendChild(tableTwoCreate);
+document.createElement('br');
+
+for (let i = 0; i < 10; i++) {
+    let rowTwoCreate = document.createElement('tr');
+    document.getElementsByTagName('table')[0].appendChild(rowTwoCreate);
+
+    for (let j = 1; j <= 3; j++) {
+        let columnTwoCreate = document.createElement('td');
+        columnTwoCreate.innerText = `hello ${j}`;
+        document.getElementsByTagName('tr')[i].appendChild(columnTwoCreate);
+    }
+
+}
+
+// за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
+
+let nValue = +prompt('Enter your number', 5);
+let mValue = +prompt('Enter next nmber', 6);
+
+let tableThreeCreate = document.createElement('table');
+document.body.appendChild(tableThreeCreate);
+
+for (let i = 0; i < nValue; i++) {
+    let rowThreeCreate = document.createElement('tr');
+    document.getElementsByTagName('table')[0].appendChild(rowThreeCreate);
+
+    for (let j = 1; j <= mValue; j++) {
+        let columnThreeCreate = document.createElement('td');
+        columnThreeCreate.innerText = `hello ${j}`;
+        document.getElementsByTagName('tr')[i].appendChild(columnThreeCreate);
+    }
+
+}
+
+// є сторінка rules.html. Контентом сторінки є заголовки та параграфи. Заголовки (h2) характеризують тему контенту яка вказана в параграфі.
+// створити скрипт, котрий зчитує всі заголовки, та робить в блоці з id=content з них список(ul>li), який буде змістом того, що знаходиться на сторінці.
+// // Скріпт повинен працювати навіть якщо кількість блоків з заголовком та параграфом зміниться.
+
+
+let headersHTwo = document.getElementsByTagName('h2');
+let ulElem = document.createElement('ul');
+let getClassContent = document.getElementById('content').appendChild(ulElem);
+
+for (let i = 0; i < headersHTwo.length; i++) {
+    let createLiElem = document.createElement('li');
+    createLiElem.innerText = document.getElementsByTagName('h2')[i].innerText;
+    document.getElementsByTagName('ul')[0].appendChild(createLiElem);
+}
+
+// Є масив котрий характеризує правила. Створити скрипт який ітерує цей масив, та робить кожне правило в окремому блоці.
+// При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
+// Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
+
+let rules = [
+    {
+        title: 'Первое правило Бойцовского клуба.',
+        body: 'Никому не рассказывать о Бойцовском клубе.'
+    },
+    {
+        title: 'Второе правило Бойцовского клуба.',
+        body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+    },
+    {
+        title: 'Третье правило Бойцовского клуба.',
+        body: 'В схватке участвуют только двое.'
+    },
+    {
+        title: 'Четвертое правило Бойцовского клуба.',
+        body: 'Не более одного поединка за один раз.'
+    },
+    {
+        title: 'Пятое правило Бойцовского клуба.',
+        body: 'Бойцы сражаются без обуви и голые по пояс.'
+    },
+    {
+        title: 'Шестое правило Бойцовского клуба.',
+        body: 'Поединок продолжается столько, сколько потребуется.'
+    },
+    {
+        title: 'Седьмое правило Бойцовского клуба.',
+        body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
+    },
+    {
+        title: 'Восьмое и последнее правило Бойцовского клуба.',
+        body: 'Новичок обязан принять бой.'
+    },
+
+];
+
+for (let i = 0; i < rules.length; i++) {
+    
+    let titles = document.createElement('h2');
+    let bodyOfRules = document.createElement('p');
+    let emptydiv = document.createElement('div');
+
+    titles.innerText = rules[i].title;
+    bodyOfRules.innerText = rules[i].body;
+    
+    document.getElementById('wrap').appendChild(emptydiv).appendChild(titles);
+    document.getElementById('wrap').appendChild(emptydiv).appendChild(bodyOfRules);
+}
