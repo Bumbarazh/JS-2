@@ -332,3 +332,22 @@ let rules = [
     },
 
 ];
+
+function iterOfArrayRules () {
+    let mainDivOfRules = document.createElement('div');
+    mainDivOfRules.id = 'rulesbk'
+    document.body.appendChild(mainDivOfRules);
+
+    for (let i = 0; i < rules.length; i++) {
+        let createDivOfRules = document.createElement('div')
+        let titleOfRules = document.createElement('h2');
+        let bodyOfrules = document.createElement('p');
+        titleOfRules.innerText = rules[i].title;
+        bodyOfrules.innerText = rules[i].body;
+        document.getElementById('rulesbk').appendChild(createDivOfRules).appendChild(titleOfRules);
+        document.getElementById('rulesbk').appendChild(createDivOfRules).appendChild(bodyOfrules);
+    }
+
+}
+
+iterOfArrayRules();
