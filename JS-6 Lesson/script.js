@@ -295,9 +295,7 @@ let carsNew = [
     {producer:"bmw", year: 2010, owner: {name: 'Matvij', age: 33, experience: 10},power: 120, price: 10700},
     {producer:"bmw", year: 2009, owner: {name: 'Nazar', age: 26, experience: 2},power: 350, price: 6780},
     {producer:"bmw", year: 2012, owner: {name: 'Roman', age: 31, experience: 5},power: 180, price: 14600},
-    // {producer:"mercedes", year: 1990, owner: {name: 'Sergiy', age: 45, experience: 15},power: 180, price: 2500},
-    // {producer:"mercedes", year: 2017, owner: {name: 'Tolik', age: 42, experience: 11},power: 400, price: 35000},
-    // {producer:"mercedes", year: 2017, owner: {name: 'Kyrylo', age: 34, experience: 7},power: 230, price: 42000}
+    
 ];
 
 // Зробили половину автопарку ремонт мотору, що збільшить потужність автомобілів на 10% (переприсвоєння змінної потужності).
