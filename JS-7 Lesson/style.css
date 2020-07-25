@@ -1,0 +1,49 @@
+#text {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+.menu {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    position: relative;
+    
+}
+
+.menu-list {
+    background-color: burlywood;
+    display: none;
+    position: absolute;
+    margin: 0;
+    top: 25px;
+}
+
+.menu-list-two {
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 25px;
+}
+
+.title {
+    color: blue;
+    padding-left: 20px;
+}
+
+.title::before {
+    content: '▶ ';
+    font-size: 80%;
+    color: green;
+}
+
+.body-of-com {
+    padding-left: 20px;
+    display: none;
+}
+
+.open {
+    padding-left: 20px;
+    display: block;
+}

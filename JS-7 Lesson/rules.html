@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fight Club</title>
+        <style>
+            .ashka {
+                font-size: 16px;
+                color: rgb(10, 43, 71);
+            }
+            h1 {
+                border: 1px solid black;
+                padding: 10px;
+                }
+        </style>
+    </head>
+    <body>
+        <div id="content"></div>
+        <h1>Правила бойцовского клуба</h1>
+        <div id="wrap">
+            <div class="rules rule1">
+                <h2>Первое правило Бойцовского клуба.</h2>
+                <p>Никому не рассказывать о Бойцовском клубе.</p>
+            </div>
+            <div class="rules rule2">
+                <h2>Второе правило Бойцовского клуба.</h2>
+                <p>Никогда никому не рассказывать о Бойцовском клубе.</p>
+            </div>
+            <div class="rules rule3">
+                <h2>Третье правило Бойцовского клуба.</h2>
+                <p>В схватке участвуют только двое.</p>
+            </div>
+            <div class="rules rule4">
+                <h2>Четвертое правило Бойцовского клуба.</h2>
+                <p>Не более одного поединка за один раз.</p>
+            </div>
+
+            <div class="rules rule5">
+                <h2>Пятое правило Бойцовского клуба.</h2>
+                <p>Бойцы сражаются без обуви и голые по пояс.</p>
+            </div>
+            <div class="rules rule6">
+                <h2>Шестое правило Бойцовского клуба.</h2>
+                <p>Поединок продолжается столько, сколько потребуется.</p>
+            </div>
+            <div class="rules rule7">
+                <h2>Седьмое правило Бойцовского клуба.</h2>
+                <p>Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок
+                    окончен.</p>
+            </div>
+            <div class="rules rule8">
+                <h2>Восьмое и последнее правило Бойцовского клуба.</h2>
+                <p>Новичок обязан принять бой.</p>
+            </div>
+        </div>
+
+        <script>
+// создать скрипт, который берет считывает на странице (rules.html) текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
+// При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
+
+        let headers = document.getElementsByTagName('h2');
+        let menu = document.getElementsByTagName('h1');
+
+        for (let i = 0; i < headers.length; i++) {
+
+            let div = document.createElement('div')
+            let a = document.createElement('a');
+
+            a.classList.add('ashka');
+            a.innerHTML = headers[i].innerText;
+            a.setAttribute('href', `#rule${[i+1]}`);
+            
+            div.appendChild(a);
+            menu[0].appendChild(div);
+        }
+
+        let rules = document.getElementsByClassName('rules');
+
+        for (let i = 0; i < rules.length; i++) {
+            rules[i].setAttribute('id', `rule${[i+1]}`);
+        }
+
+        </script>
+    </body>
+</html>
