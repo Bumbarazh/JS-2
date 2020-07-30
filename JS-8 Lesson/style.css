@@ -1,0 +1,17 @@
+#btn {
+    display: block;
+}
+#btnDiv {
+    margin-bottom: 5px;
+}
+.inputs {
+    display: block;
+    margin: 0 0 5px;
+}
+#form {
+    margin-top: 10px;
+}
+.inputsTwo {
+    display: block;
+    margin: 0 0 5px;
+}
